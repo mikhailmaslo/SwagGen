@@ -258,6 +258,10 @@ public class SwiftFormatter: CodeFormatter {
     }
 
     override func getEscapedName(_ name: String) -> String {
-        return "`\(name)`"
+        if name == "self" {
+            return "sSelf"
+        } else {
+            return "`\(name)`"
+        }
     }
 }
