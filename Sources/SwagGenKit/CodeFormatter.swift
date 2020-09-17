@@ -501,7 +501,7 @@ public class CodeFormatter {
     // MARK: name and types
 
     func getName(_ name: String) -> String {
-        var name = name.replacingOccurrences(of: "^-(\\d)", with: "_negative$1", options: .regularExpression)
+        var name = name.replacingOccurrences(of: "^-(\\d)*", with: "v_$1", options: .regularExpression)
         name = name.lowerCamelCased()
         return escapeName(name)
     }
